@@ -1,6 +1,3 @@
-'use client'
-import React from 'react';
-
 const Navbar = () => {
     return (
         <nav className="py-8 px-6 w-min h-screen flex flex-col">

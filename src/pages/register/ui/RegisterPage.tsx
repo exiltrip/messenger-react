@@ -12,10 +12,9 @@ export default function RegisterPage() {
   }
   
   return (
-      <div className="p-4 flex">
-        <div className="text-black w-full flex justify-between h-[calc(100vh-2rem)] items-center">
-          <div className="w-full flex justify-center">
-            <div className="w-2/3 py-5 px-10 bg-white h-min">
+        <div className="p-4 text-black w-full flex justify-between h-screen items-center">
+          <div className="w-full grid gap-4 grid-cols-[repeat(4,minmax(50px,80px))] justify-center">
+            <div className="col-span-4 py-5 px-10 bg-white h-min">
               <h1 className="text-2xl font-semibold ">Sign up</h1>
               <p className="">Welcome! Please enter your details.</p>
               <div className="mt-6 flex flex-col gap-4">
@@ -29,8 +28,7 @@ export default function RegisterPage() {
               </div>
             </div>
           </div>
-          <img className=" h-full rounded-2xl w-1/2 object-fit" src={hero} alt=""/>
+          <img className="max-sm:hidden h-full rounded-2xl min-w-1/2 object-cover" src={hero} alt=""/>
         </div>
-      </div>
   );
 }
