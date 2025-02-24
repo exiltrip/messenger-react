@@ -5,7 +5,7 @@ const ChatWindow = () => {
 
 
     return (
-        <main className="mr-4 my-4 w-full rounded-3xl bg-white  text-slate-800">
+        <main className="h-full grow m-2 md:h-auto md:mx-0 mr-4 md:my-4 w-full rounded-3xl bg-white text-slate-800">
             <nav className="py-4 px-6 border-b border-b-slate-300 w-full flex gap-4">
                 <div
                     className="rounded-full text-center text-sm flex justify-center items-center bg-sky-200 !h-12 !w-12 aspect-square">

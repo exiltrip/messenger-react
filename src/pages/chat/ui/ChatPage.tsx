@@ -10,7 +10,7 @@ const ChatPage = () => {
     const isChatSelected = useUnit($isChatActive);
 
     return (
-        <div className="flex w-full h-screen text-slate-800 gap-4">
+        <div className="flex-col-reverse w-screen md:flex-row flex md:w-full h-screen text-slate-800 gap-4">
             <Navbar/>
             <ChatSelector/>
             {isChatSelected

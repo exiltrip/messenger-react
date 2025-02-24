@@ -12,20 +12,20 @@ const Navbar = () => {
         .join("");
 
     return (
-        <nav className="py-8 px-6 w-min h-screen flex flex-col gap-y-10">
-            <div className="flex flex-col grow-0 gap-2">
-                <img className="self-center !w-10 !h-10" src={logo}/>
-                <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl w-full active:text-white active:bg-slate-500 px-6 py-2 "><ChatBubbleOutlineOutlinedIcon/></button>
-                <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl w-full active:text-white active:bg-slate-500 px-6 py-2"><PhoneOutlinedIcon/></button>
-                <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl w-full active:text-white active:bg-slate-500 px-6 py-2"><PeopleOutlinedIcon/></button>
+        <nav className="w-screen gap-x-2 md:gap-x-0 h-min py-2 md:py-8 px-6 md:w-min md:h-screen flex md:flex-col md:gap-y-10">
+            <div className="flex md:flex-col grow-0 gap-2">
+                <img className="self-center !w-12 !h-12" src={logo}/>
+                <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl md:w-full active:text-white active:bg-slate-500 px-4 md:px-6 py-2 "><ChatBubbleOutlineOutlinedIcon/></button>
+                <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl md:w-full active:text-white active:bg-slate-500 px-4 md:px-6 py-2"><PhoneOutlinedIcon/></button>
+                <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl md:w-full active:text-white active:bg-slate-500 px-4 md:px-6 py-2"><PeopleOutlinedIcon/></button>
             </div>
 
-            <div className="flex flex-col items-center h-full grow justify-end gap-1">
-                <p className="font-light text-sm text-center">Account</p>
-                <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl w-full active:text-white active:bg-slate-500 px-6 py-2"><SettingsOutlinedIcon/></button>
+            <div className="flex w-full md:flex-col items-center md:h-full grow justify-end gap-1">
+                <p className="hidden md:block font-light text-sm text-center">Account</p>
+                <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl md:w-full active:text-white active:bg-slate-500 px-4 md:px-6 py-2"><SettingsOutlinedIcon/></button>
             </div>
 
-            <div className="flex flex-col items-center grow-0 justify-end gap-2">
+            <div className="flex md:flex-col items-center grow-0 justify-end gap-2">
                 <button className="cursor-pointer duration-200 rounded-full w-full active:text-white  active:scale-110 bg-sky-200 h-10 !w-10">
                     {initials}
                 </button>
