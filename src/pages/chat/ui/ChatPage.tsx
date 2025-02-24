@@ -1,13 +1,19 @@
 import Navbar from "../../../shared/ui/navbar/Navbar.tsx";
+import ChatSelector from "./ChatSelector";
+import NotSelected from "./NotSelected";
 
 const ChatPage = () => {
-    return (
-        <div className="flex justify-between w-full h-screen">
-            <Navbar />
-            <div className="p-4">
 
-            </div>
-            
+    const isChatSelected = false
+
+    return (
+        <div className="flex w-full h-screen text-slate-800">
+            <Navbar/>
+            <ChatSelector/>
+            {isChatSelected
+                ? ""
+                : <NotSelected/>}
+
         </div>
     );
 };
