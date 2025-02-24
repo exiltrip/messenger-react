@@ -14,7 +14,7 @@ export default function RegisterPage() {
   return (
         <div className="p-4 text-slate-800 w-full flex justify-between h-screen items-center">
           <div className="w-full grid gap-4 grid-cols-[repeat(4,minmax(50px,80px))] justify-center">
-            <div className="col-span-4 py-5 px-10 bg-white h-min">
+            <div className="col-span-4 py-5 px-10 h-min">
               <h1 className="text-2xl font-semibold ">Sign up</h1>
               <p className="">Welcome! Please enter your details.</p>
               <div className="mt-6 flex flex-col gap-4">

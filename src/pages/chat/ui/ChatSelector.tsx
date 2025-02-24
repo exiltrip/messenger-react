@@ -38,7 +38,7 @@ const ChatSelector = () => {
     }
 
     return (
-        <div className="py-4 px-6 m-4 grid gap-4 grid-cols-[repeat(4,minmax(50px,80px))] rounded-3xl bg-white">
+        <div className="py-4 px-6 m-4 grid gap-4 grid-cols-[repeat(4,minmax(50px,80px))] rounded-3xl">
             <div className="flex flex-col col-span-4 gap-4 min-h-0">
                 <nav className="flex justify-between items-center w-full h-min ">
                     <h1 className="text-2xl">Chats</h1>
