@@ -3,6 +3,7 @@ import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutline
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import logo from '/logo-dark.png'
+import {useLocation} from "react-router";
 
 const Navbar = () => {
     const userData = {fullname: "Vladimir S"}
@@ -15,7 +16,7 @@ const Navbar = () => {
         <nav className="w-screen gap-x-2 md:gap-x-0 h-min py-2 md:py-8 px-6 md:w-min md:h-screen flex md:flex-col md:gap-y-10">
             <div className="flex md:flex-col grow-0 gap-2">
                 <img className="self-center !w-12 !h-12" src={logo}/>
-                <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl md:w-full active:text-white active:bg-slate-500 px-4 md:px-6 py-2 "><ChatBubbleOutlineOutlinedIcon/></button>
+                <button className={`cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl md:w-full ${useLocation().pathname.startsWith("/chat") ? "text-white bg-slate-500 active:text-slate-500 active:bg-slate-400" : "active:text-white active:bg-slate-500"} px-4 md:px-6 py-2`}><ChatBubbleOutlineOutlinedIcon/></button>
                 <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl md:w-full active:text-white active:bg-slate-500 px-4 md:px-6 py-2"><PhoneOutlinedIcon/></button>
                 <button className="cursor-pointer duration-500 hover:bg-slate-300 rounded-3xl md:w-full active:text-white active:bg-slate-500 px-4 md:px-6 py-2"><PeopleOutlinedIcon/></button>
             </div>
