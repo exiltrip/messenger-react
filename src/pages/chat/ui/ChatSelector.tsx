@@ -1,30 +1,33 @@
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DoneIcon from '@mui/icons-material/Done';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
-import {useEvent, useUnit} from "effector-react";
+import {useUnit} from "effector-react";
 import {
-    $activeChatId,
+    $activeChat,
     $chatPartner,
-    $isChatActive,
-    activeChatIdChanged,
+    $isChatActive, changeActiveChat, changeActiveChatPartnerName,
     chatActivated, chatDeactivated
 } from "../../../entities/chat/model.ts";
 import {createInitials} from "../../../features/initials/CreateInitials.ts";
 
 const ChatSelector = () => {
     const chats = useUnit($chatPartner);
-    const activeChat = useUnit($activeChatId);
+    const activeChat = useUnit($activeChat);
     const isActiveChat = useUnit($isChatActive);
-    const changeActiveChatId = useEvent(activeChatIdChanged);
-    const chatActivate = useEvent(chatActivated);
-    const chatDectivate = useEvent(chatDeactivated);
+    const changeActiveChatId = useUnit(changeActiveChat);
+    const chatActivate = useUnit(chatActivated);
+    const chatDectivate = useUnit(chatDeactivated);
 
-    const handleSelectChat = (id: number) => {
+    const changeChatPartnerName = useUnit(changeActiveChatPartnerName)
+
+    const handleSelectChat = (id: number, name: string) => {
         if (isActiveChat && activeChat == id) {
-            chatDectivate()
+            chatDectivate();
+            changeChatPartnerName(null);
             changeActiveChatId(null);
         } else {
             changeActiveChatId(id);
+            changeChatPartnerName(name);
             chatActivate()
         }
 
@@ -41,7 +44,7 @@ const ChatSelector = () => {
                 </nav>
                 <div className="flex flex-col flex-grow min-h-0 gap-y-3 w-full overflow-y-auto  self-start items-start">
                     {chats.map(chat =>
-                        <div onClick={() => handleSelectChat(chat.peer_id)}
+                        <div onClick={() => handleSelectChat(chat.peer_id, chat.chatPartner)}
                              className={`w-full hover:pr-4 duration-500 cursor-pointer hover:py-1 hover:px-2 flex items-center gap-x-2 rounded-3xl hover:bg-slate-100 ${activeChat == chat.peer_id && "bg-slate-100 p-2 pr-4"}`}>
                             <div
                                 className="rounded-full text-center text-sm flex justify-center items-center bg-sky-200 !h-8 !w-8 aspect-square">
