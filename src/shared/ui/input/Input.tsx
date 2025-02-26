@@ -7,7 +7,7 @@ interface inputProps {
     type?: string,
     value?: string | number,
     className?: string,
-    onChange?: (() => void),
+    onChange?: ((e) => void),
     onFocus?: (() => void),
     onBlur?: (() => void)
 }

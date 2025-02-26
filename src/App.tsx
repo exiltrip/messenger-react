@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import ChatPage from "./pages/chat";
+import ProtectedRoute from "./shared/protectedRoute";
 
 function App() {
 
@@ -10,8 +11,9 @@ function App() {
         <Routes>
             <Route path="/login" element={<LoginPage/>} />
             <Route path="/register" element={<RegisterPage/>} />
-            <Route path="/chat" element={<ChatPage/>} />
-            <Route path="/chat/:id" element={<ChatPage/>} />
+            <Route path="/chat/" element={<ProtectedRoute><ChatPage/></ProtectedRoute>} />
+            <Route path="/" element={<ProtectedRoute><ChatPage/></ProtectedRoute>} />
+            <Route path="/chat/:id" element={<ProtectedRoute><ChatPage/></ProtectedRoute>} />
         </Routes>
     </BrowserRouter>
   )
