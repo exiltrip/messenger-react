@@ -4,7 +4,7 @@ export interface ChatPartner {
     chatPartner: string,
     message: string,
     read: boolean,
-    time: string,
+    time: string | number,
     unread?: number,
 }
 

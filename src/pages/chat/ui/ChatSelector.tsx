@@ -35,7 +35,7 @@ const ChatSelector = () => {
 
 
     return (
-        <div className={`h-full md:h-auto py-4 px-6 m-2 md:mx-0 md:my-4 grid md:grid gap-4 md:grid-cols-[repeat(4,minmax(70px,70px))] rounded-3xl bg-white ${isActiveChat && "hidden"}`}>
+        <div className={`h-full grid-cols-[repeat(4,minmax(30px,180px))] md:h-auto py-4 px-6 m-2 md:mx-0 md:my-4 grid md:grid gap-4 md:grid-cols-[repeat(4,minmax(70px,70px))] rounded-3xl bg-white ${isActiveChat && "hidden"}`}>
             <div className="flex flex-col col-span-4 gap-4 min-h-0">
                 <nav className="flex justify-between items-center w-full h-min ">
                     <h1 className="text-2xl">Chats</h1>
@@ -52,7 +52,7 @@ const ChatSelector = () => {
                             </div>
                             <div className="flex flex-col overflow-x-hidden w-full">
                                 <p className="text-black leading-none">{chat.chatPartner}</p>
-                                <p className="w-full leading-none text-sm truncate">
+                                <p className="w-full leading-none text-sm truncate ">
                                     {chat.message}
                                 </p>
                             </div>

@@ -135,7 +135,7 @@ $chats.on(addMessage, (chats, newMessage) => {
                     ...chat.messages,
                     {
                         ...newMessage,
-                        timestamp: Date.now(),
+                        timestamp: Date.now().toString(),
                         read: newMessage.peer_id !== yourPeerId // Помечаем непрочитанным, если отправил другой пользователь
                     }
                 ]
@@ -145,12 +145,12 @@ $chats.on(addMessage, (chats, newMessage) => {
     });
 });
 
-export const $chatMessages = createStore([])
+export const $chatMessages: any = createStore([])
     .on(changeActiveChat, (_, activeChat) => {
         const chat = $chats.getState().find(c => c.chatid === activeChat);
         return chat ? chat.messages : [];
     })
-    .on($chats, (state, chats) => {
+    .on($chats, (state: any, chats) => {
         const activeChat = $activeChat.getState();
         const chat = chats.find(c => c.chatid === activeChat);
         return chat ? chat.messages : [];
